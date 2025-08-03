@@ -1,0 +1,35 @@
+<ion-header translucent="true">
+  <ion-toolbar color="primary">
+    <ion-title>Listado de Propiedades</ion-title>
+
+    <!-- Botón para ir a "crear" -->
+    <ion-buttons slot="end">
+      <ion-button class="boton" routerLink="" aria-label="Crear nueva propiedad">
+        Volver Al Home
+      </ion-button>
+      <ion-button class="boton" routerLink="/crear" aria-label="Crear nueva propiedad">
+        Crear Propiedad
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+
+  <ion-list class="centrar-horizontal">
+    <!--  Crea una tarjeta por cada propiedad en el arreglo, usando 'i' como índice. -->
+    <ion-card *ngFor="let propiedad of propiedades; let i = index" class="card-compacta">
+      <img [src]="propiedad.foto" *ngIf="propiedad.foto" />
+      <ion-card-header>
+        <ion-card-title>{{ propiedad.titulo }}</ion-card-title>
+        <ion-card-subtitle>{{ propiedad.precio | currency:'CLP':'symbol':'1.0-0' }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        {{ propiedad.descripcion }}
+        <ion-button color="danger" expand="block" (click)="confirmarEliminacion(i)">
+          Eliminar
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+</ion-content>

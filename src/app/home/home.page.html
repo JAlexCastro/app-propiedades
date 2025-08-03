@@ -1,20 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header translucent="true">
+  <ion-toolbar color="primary">
+    <ion-title>Propiedades San Borjas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content fullscreen class="ion-padding home-landing">
+  <div class="contenido-landing">
+    <ion-card class="descripcion">
+      <ion-card-header>
+        <ion-card-title>Gestor de Propiedades</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Esta aplicación te permite registrar, visualizar y administrar propiedades inmobiliarias. Puedes añadir fotos,
+        descripciones y precios usando la cámara de tu dispositivo.
+      </ion-card-content>
+    </ion-card>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="acciones">
+      <ion-card class="card-opcion" routerLink="/listar">
+        <ion-card-header>
+          <ion-card-title>📋 Ver Propiedades</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Explora todas las propiedades registradas con sus detalles.
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="card-opcion" routerLink="/crear">
+        <ion-card-header>
+          <ion-card-title>➕ Crear Propiedad</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          Añade una nueva propiedad con foto, precio y descripción.
+        </ion-card-content>
+      </ion-card>
+    </div>
   </div>
 </ion-content>

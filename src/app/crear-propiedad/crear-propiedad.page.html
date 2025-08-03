@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Crear Propiedad</ion-title>
+    <!-- Botón para navegar a la lista de propiedades -->
+    <ion-buttons slot="end">
+      <ion-button class="boton" fill="clear" [routerLink]="['/listar']">
+        Listar Propiedades
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Formulario reactivo que ejecuta guardar() al enviarse -->
+  <form [formGroup]="formulario" (ngSubmit)="guardar()">
+
+    <!-- Campo Título con validaciones y mensajes de error -->
+    <ion-item>
+      <ion-label position="floating">Título</ion-label>
+      <ion-input formControlName="titulo"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)">
+      <p *ngIf="titulo.errors?.['required']">El título es obligatorio.</p>
+      <p *ngIf="titulo.errors?.['minlength']">Debe tener al menos 5 caracteres.</p>
+    </ion-text>
+
+    <!-- Campo Precio con validaciones -->
+    <ion-item>
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input type="number" formControlName="precio"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="precio.invalid && (precio.dirty || precio.touched)">
+      <p *ngIf="precio.errors?.['required']">El precio es obligatorio.</p>
+    </ion-text>
+
+    <!-- Campo Descripción con validaciones -->
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea formControlName="descripcion"></ion-textarea>
+    </ion-item>
+    <ion-text color="danger" *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
+      <p *ngIf="descripcion.errors?.['required']">La descripción es obligatoria.</p>
+      <p *ngIf="descripcion.errors?.['minlength']">Debe tener al menos 20 caracteres.</p>
+    </ion-text>
+
+    <!-- Botón para activar la cámara y tomar foto -->
+    <ion-button expand="block" (click)="tomarFoto()">Tomar Foto</ion-button>
+
+    <!-- Muestra la foto tomada si existe -->
+    <div *ngIf="foto">
+      <ion-img [src]="foto" style="margin-top: 10px;"></ion-img>
+    </div>
+
+    <!-- Botón para guardar el formulario, solo activo si es válido -->
+    <ion-button expand="block" type="submit" [disabled]="formulario.invalid">Guardar</ion-button>
+  </form>
+</ion-content>

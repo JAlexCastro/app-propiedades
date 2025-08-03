@@ -1,0 +1,94 @@
+.contenido-centrado {
+    display: flex;
+    justify-content: center;
+    /* centra horizontalmente */
+    align-items: center;
+    /* centra verticalmente */
+    height: 100%;
+    /* toma todo el alto disponible */
+    padding: 20px;
+}
+
+.centrar-horizontal {
+    margin: 0 auto;
+    /* centra horizontalmente */
+    max-width: 640px;
+    width: 100%;
+}
+
+ion-list {
+    width: 100%;
+    max-width: 640px;
+}
+
+.card-compacta {
+
+    display: flex;
+    flex-direction: row;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #fff;
+    margin-bottom: 0;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-compacta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-compacta img {
+    width: 180px;
+    height: 140px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    flex-shrink: 0;
+}
+
+.card-compacta ion-card-header,
+.card-compacta ion-card-content {
+    padding: 12px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-compacta ion-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #222;
+}
+
+.card-compacta ion-card-subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #3880ff;
+    margin-bottom: 10px;
+}
+
+.card-compacta ion-card-content {
+    font-size: 0.9rem;
+    color: #555;
+    flex-grow: 1;
+}
+
+.card-compacta ion-button {
+    align-self: flex-start;
+    margin-top: 10px;
+    --background: #e53e3e;
+    --background-hover: #c53030;
+    --border-radius: 8px;
+    font-weight: 600;
+}
+
+.boton:hover {
+    background-color: rgb(17, 185, 185);
+    border-radius: 6px;
+
+}
